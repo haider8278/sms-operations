@@ -13,11 +13,152 @@
       "pincode": 654321
     }
   ],
-  "posts": [
+  "workorders": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "bgClass": "light-grey",
+      "orderId": "BM00012345",
+      "product":{"title":"Short Sleeve T", "image":"","price":"$88.79"},
+      "customer": "Full Company Name 01",
+      "pipeline": "Raw",
+      "stage": "(5 New)",
+      "orderDate": "01-15-23",
+      "shipDate": "02-15-23"
+    },
+    {
+      "id": 2,
+      "bgClass": "dark-grey",
+      "orderId": "BM00012346",
+      "product": {
+        "title": "Full Sleeve T",
+        "image": "",
+        "price": "$88.79"
+      },
+      "customer": "Full Company Name 02",
+      "pipeline": "Raw",
+      "stage": "(5 New)",
+      "orderDate": "01-15-23",
+      "shipDate": "02-15-23"
+    },
+    {
+      "id": 3,
+      "bgClass": "light-grey",
+      "orderId": "BM00012347",
+      "product": {
+        "title": "Short Sleeve",
+        "image": "",
+        "price": "$88.79"
+      },
+      "customer": "Full Company Name 03",
+      "pipeline": "Raw",
+      "stage": "(5 New)",
+      "orderDate": "01-15-23",
+      "shipDate": "02-15-23"
+    },
+    {
+      "id": 4,
+      "bgClass": "red",
+      "orderId": "BM00012348",
+      "product": {
+        "title": "Short Sleeve T",
+        "image": "",
+        "price": "$88.79"
+      },
+      "customer": "Full Company Name 04",
+      "pipeline": "Raw",
+      "stage": "(5 New)",
+      "orderDate": "01-15-23",
+      "shipDate": "02-15-23"
+    },
+    {
+      "id": 5,
+      "bgClass": "light-grey",
+      "orderId": "BM00012349",
+      "product": {
+        "title": "Short Sleeve T",
+        "image": "",
+        "price": "$88.79"
+      },
+      "customer": "Full Company Name 05",
+      "pipeline": "Raw",
+      "stage": "(5 New)",
+      "orderDate": "01-15-23",
+      "shipDate": "02-15-23"
+    },
+    {
+      "id": 6,
+      "bgClass": "light-grey",
+      "orderId": "BM00012350",
+      "product": {
+        "title": "Short Sleeve T",
+        "image": "",
+        "price": "$88.79"
+      },
+      "customer": "Full Company Name 06",
+      "pipeline": "Raw",
+      "stage": "(5 New)",
+      "orderDate": "01-15-23",
+      "shipDate": "02-15-23"
+    },
+    {
+      "id": 7,
+      "bgClass": "light-grey",
+      "orderId": "BM00012351",
+      "product": {
+        "title": "Short Sleeve T",
+        "image": "",
+        "price": "$88.79"
+      },
+      "customer": "Full Company Name 07",
+      "pipeline": "Raw",
+      "stage": "(5 New)",
+      "orderDate": "01-15-23",
+      "shipDate": "02-15-23"
+    },
+    {
+      "id": 8,
+      "bgClass": "light-grey",
+      "orderId": "BM00012352",
+      "product": {
+        "title": "Short Sleeve T",
+        "image": "",
+        "price": "$88.79"
+      },
+      "customer": "Full Company Name 08",
+      "pipeline": "Raw",
+      "stage": "(5 New)",
+      "orderDate": "01-15-23",
+      "shipDate": "02-15-23"
+    },
+    {
+      "id": 9,
+      "bgClass": "light-grey",
+      "orderId": "BM00012353",
+      "product": {
+        "title": "Short Sleeve T",
+        "image": "",
+        "price": "$88.79"
+      },
+      "customer": "Full Company Name 09",
+      "pipeline": "Raw",
+      "stage": "(5 New)",
+      "orderDate": "01-15-23",
+      "shipDate": "02-15-23"
+    },
+    {
+      "id": 10,
+      "bgClass": "light-grey",
+      "orderId": "BM00012354",
+      "product": {
+        "title": "Short Sleeve T",
+        "image": "",
+        "price": "$88.79"
+      },
+      "customer": "Full Company Name 10",
+      "pipeline": "Raw",
+      "stage": "(5 New)",
+      "orderDate": "01-15-23",
+      "shipDate": "02-15-23"
     }
   ],
   "comments": [

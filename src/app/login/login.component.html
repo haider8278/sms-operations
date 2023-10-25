@@ -1,5 +1,5 @@
 <form class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()"  autocomplete="false">
-<div class="vertically-center">
+<div class="mt-6">
 <mat-grid-list cols="1" rowHeight="75px">
   <mat-grid-tile [class.center]="true">
     <h4>Login</h4>
@@ -13,10 +13,10 @@
 <mat-grid-list cols="1" rowHeight="140px">
   <mat-grid-tile [class.center]="true">
       <div class="employee-id">
-        <input matInput maxlength="1" formControlName="empId1" class="login-input" [ngClass]="{ 'is-invalid': submitted && f['empId1'].errors }" autocomplete="false">
-        <input matInput maxlength="1" formControlName="empId2" class="login-input" [ngClass]="{ 'is-invalid': submitted && f['empId2'].errors }" autocomplete="false">
-        <input matInput maxlength="1" formControlName="empId3" class="login-input" [ngClass]="{ 'is-invalid': submitted && f['empId3'].errors }" autocomplete="false">
-        <input matInput maxlength="1" formControlName="empId4" class="login-input" [ngClass]="{ 'is-invalid': submitted && f['empId4'].errors }" autocomplete="false">
+        <input matInput maxlength="1" formControlName="empId1" class="login-input" [ngClass]="{ 'is-invalid': submitted && f['empId1'].errors }" autocomplete="false" #empId1 (keyup)="gotoNextField(empId2)">
+        <input matInput maxlength="1" formControlName="empId2" class="login-input" [ngClass]="{ 'is-invalid': submitted && f['empId2'].errors }" autocomplete="false" #empId2 (keyup)="gotoNextField(empId3)">
+        <input matInput maxlength="1" formControlName="empId3" class="login-input" [ngClass]="{ 'is-invalid': submitted && f['empId3'].errors }" autocomplete="false" #empId3 (keyup)="gotoNextField(empId4)">
+        <input matInput maxlength="1" formControlName="empId4" class="login-input" [ngClass]="{ 'is-invalid': submitted && f['empId4'].errors }" autocomplete="false" #empId4 (keyup)="gotoNextField(pincode1)">
       </div>
   </mat-grid-tile>
 </mat-grid-list>
@@ -28,28 +28,27 @@
 <mat-grid-list cols="1" rowHeight="140px">
   <mat-grid-tile [class.center]="true">
       <div class="pincode">
-        <input matInput maxlength="1" type="password" formControlName="pincode1" class="login-input" [ngClass]="{ 'is-invalid': submitted && f['pincode1'].errors }">
-        <input matInput maxlength="1" type="password" formControlName="pincode2" class="login-input" [ngClass]="{ 'is-invalid': submitted && f['pincode2'].errors }">
-        <input matInput maxlength="1" type="password" formControlName="pincode3" class="login-input" [ngClass]="{ 'is-invalid': submitted && f['pincode3'].errors }">
-        <input matInput maxlength="1" type="password" formControlName="pincode4" class="login-input" [ngClass]="{ 'is-invalid': submitted && f['pincode4'].errors }">
-        <input matInput maxlength="1" type="password" formControlName="pincode5" class="login-input" [ngClass]="{ 'is-invalid': submitted && f['pincode5'].errors }">
-        <input matInput maxlength="1" type="password" formControlName="pincode6" class="login-input" [ngClass]="{ 'is-invalid': submitted && f['pincode6'].errors }">
+        <input matInput maxlength="1" type="password" formControlName="pincode1" class="login-input" [ngClass]="{ 'is-invalid': submitted && f['pincode1'].errors }" #pincode1 (keyup)="gotoNextField(pincode2)">
+        <input matInput maxlength="1" type="password" formControlName="pincode2" class="login-input" [ngClass]="{ 'is-invalid': submitted && f['pincode2'].errors }" #pincode2 (keyup)="gotoNextField(pincode3)">
+        <input matInput maxlength="1" type="password" formControlName="pincode3" class="login-input" [ngClass]="{ 'is-invalid': submitted && f['pincode3'].errors }" #pincode3 (keyup)="gotoNextField(pincode4)">
+        <input matInput maxlength="1" type="password" formControlName="pincode4" class="login-input" [ngClass]="{ 'is-invalid': submitted && f['pincode4'].errors }" #pincode4 (keyup)="gotoNextField(pincode5)">
+        <input matInput maxlength="1" type="password" formControlName="pincode5" class="login-input" [ngClass]="{ 'is-invalid': submitted && f['pincode5'].errors }" #pincode5 (keyup)="gotoNextField(pincode6)">
+        <input matInput maxlength="1" type="password" formControlName="pincode6" class="login-input" [ngClass]="{ 'is-invalid': submitted && f['pincode6'].errors }" #pincode6 (keyup)="gotoNextField(loginsubmit)">
       </div>
   </mat-grid-tile>
 </mat-grid-list>
 <mat-grid-list cols="1" rowHeight="130px">
   <mat-grid-tile [class.center]="true">
-    <button mat-button class="button-lg" color="primary">Login</button>
+    <button mat-button #loginsubmit class="button-lg" color="primary">Login</button>
     <i class="fa fa-loader"></i>
   </mat-grid-tile>
 </mat-grid-list>
 </div>
 </form>
-<div id="popupContainer" [ngClass]="{ 'active': loginError }">
+<div id="popupContainer" [ngClass]="{ 'active': loginError.error }">
   <div id="popup">
     <span id="closePopup" (click)="closePopup()">&times;</span>
-    <h2>Your Employee ID or PIN # is incorrect</h2>
-    <p>Please contact your Supervisor or Human Resources.</p>
+    <div [innerHTML]="loginError.msg">
   </div>
 </div>
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WorkOrder, WorkordersService } from '../../services/workorders.service';
 
 @Component({
   selector: 'app-workorders',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class WorkordersComponent {
 
+  workOrders:any;
+  constructor(private workOrdersService: WorkordersService) {
+
+  }
+
+  ngOnInit() {
+    this.workOrdersService.getWorkOrdersList().
+      subscribe((data) => {
+        console.log('Data received', data);
+        this.workOrders = data;
+      })
+  }
 }

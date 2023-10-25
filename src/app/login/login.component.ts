@@ -36,7 +36,9 @@ export class LoginComponent {
     pincode6: new FormControl(''),
   });
   submitted = false;
-  loginError = false;
+  loginError = {
+    error: false, msg:''
+  };
 
   data: any;
   login: any;
@@ -53,6 +55,11 @@ export class LoginComponent {
   //     console.log(`Dialog result: ${result}`);
   //   });
   // }
+
+  gotoNextField(nextElement: any) {
+    console.log(nextElement);
+    nextElement.focus();
+  }
 
   ngOnInit(): void {
 
@@ -92,22 +99,34 @@ export class LoginComponent {
       this.data = data;
       if (this.data.length > 0) {
         localStorage.setItem("isLoggedin", "true");
-        this.router.navigate(['dashboard/work-order-summary']);
+        this.router.navigate(['dashboard/work-orders']);
       } else {
-        this.loginError = true;
+
+        this.loginError =  {
+          error: true,
+          msg: `<h2>Your Employee ID or PIN # is incorrect</h2>
+            <p>Please contact your Supervisor or Human Resources.</p>`
+        };
       }
     },
-      (error: any) => {
+      (errormsg: any) => {
         // Handle the error within your component
-        console.error(error);
-        alert(error);
+        console.error(errormsg);
+        this.loginError = {
+          error: true,
+          msg: `<h2>${errormsg}</h2>`
+        };;
+        //alert(errormsg);
         // Display an alert or take appropriate action in your component
       }
     )
   }
 
   closePopup() {
-    this.loginError = false;
+    this.loginError = {
+      error: false,
+      msg: ''
+    };;
   }
 
 }

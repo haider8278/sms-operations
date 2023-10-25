@@ -21,10 +21,21 @@ export class HeaderComponent {
     console.log(this.isLoggedIn, sessionToken);
   }
 
+  ngOnInit() {
+    // setInterval(function () {
+    //   const sessionToken = localStorage.getItem('isLoggedin') || false;
+    //   if (sessionToken == 'true') {
+    //     this.isLoggedIn = true;
+    //   }
+    // },5000)
+  }
+
+
   logout() {
     localStorage.removeItem('isLoggedin');
     this.isLoggedIn = false;
     this.router.navigate(['']);
+
   }
 
 }

@@ -19,17 +19,69 @@ body {
   background-color: var(--color-main-background);
   font-family: 'Poppins', sans-serif;
 }
+h2{
+  font: normal normal 600 32px/32px Poppins;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
 
 .wrap{
   max-width: 1366px;
   display: block;
   margin: 0 auto;
+
+}
+.container {
+  margin: 0 1rem;
+  background: #2A323C 0% 0% no-repeat padding-box;
+  box-shadow: 0px 4px 8px #00000026;
+  border-radius: 15px;
+  margin-top: 24px;
+  padding: 17px;
+}
+.grid{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  gap: 15px;
+}
+.grid.g-4{
+  grid-template-columns: repeat(4, minmax(216px, 1fr));
+}
+
+.grid-item label{
+  text-align: left;
+  font: normal normal 600 14px/14px Poppins;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  display: block;
+  opacity: 0.5;
+}
+.grid-item span {
+  text-align: left;
+  font: normal normal medium 18px/18px Poppins;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+}
+.grid-item .mat-icon{
+  vertical-align: middle;
+}
+svg {
+  fill: var(--color-primary-green);
+  vertical-align: middle;
 }
 .logo .mat-grid-tile-content {
   justify-content: left;
 }
 .header-right .mat-grid-tile-content {
   justify-content: end;
+  padding: 0 24px;
+}
+.dashboard .isLoggedIn.mat-grid-list{
+  background: #2A323C;
+}
+.dashboard .logo{
+  background: #4E5661;
 }
 
 .login-input-wrap div {
@@ -48,6 +100,9 @@ input.is-invalid{
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.mt-6{
+  margin-top: 2rem;
 }
 
 #popupContainer {
@@ -113,4 +168,37 @@ input.is-invalid{
 
 #showPopup:focus+#popupContainer {
   display: block;
+}
+
+
+.summary-item{
+  background: rgba(74, 81, 89,.75);
+  height: 140px;
+  border-radius: 14px;
+  margin-top: 20px;
+}
+.summary-item.light-grey {
+  background: rgba(74, 81, 89, .75);
+}
+.summary-item.dark-grey {
+  background: rgba(49, 55, 62, 0.85);
+}
+.summary-item.red {
+  background: rgba(44, 9, 9, 0.53);
+}
+.summary-item-right .mat-grid-tile-content * {
+  margin-right: 2rem;
+}
+.summary-item-right .mat-grid-tile-content{
+  justify-content: flex-end;
+}
+.mdc-button {
+  font-size: 18px;
+  padding: 25px !important;
+}
+.mat-mdc-outlined-button:not(:disabled){
+  border-color: var(--color-primary-green) !important;
+}
+.mdc-button > span{
+  margin: 0 !important;
 }
