@@ -1,0 +1,33 @@
+{
+  "users": [
+    {
+      "id":1,
+      "name": "John Doe",
+      "empoloyeeId": 3435,
+      "pincode": 123456
+    },
+    {
+      "id": 2,
+      "name": "John Doe2",
+      "empoloyeeId": 1234,
+      "pincode": 654321
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

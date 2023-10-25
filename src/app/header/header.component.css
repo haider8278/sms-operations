@@ -1,0 +1,18 @@
+.logo-name{
+  margin: 0;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+  color: #FFF;
+  text-transform: uppercase;
+  color: var(--color-white);
+  font-size: 24px;
+  font-weight: 400;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin-left: 8px;
+}
+

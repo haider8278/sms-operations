@@ -1,0 +1,8 @@
+<mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile #logo [colspan]="1"  [rowspan]="1" [class.logo]="true">
+      <img src="../../assets/img/logo.png" alt="Operations Logo" height="80"> <p class="logo-name">Operations</p>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="3" rowspan="1" [class.header-right]="true" >
+    <button mat-raised-button color="primary" *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+  </mat-grid-tile>
+</mat-grid-list>
