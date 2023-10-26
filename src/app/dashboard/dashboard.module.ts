@@ -5,12 +5,14 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 
 
 
 @NgModule({
   declarations: [
-    WorkordersComponent
+    WorkordersComponent,
+    OrderdetailsComponent
   ],
   imports: [
     CommonModule,

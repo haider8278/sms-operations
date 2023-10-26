@@ -22,7 +22,7 @@ export class WorkordersService {
   getWorkOrdersList() {
     //return this.http.get('http://localhost:3001/workorders');
 
-    const workOrders = this.http.get('http://localhost:3001/workorders').pipe(
+    const workOrders = this.http.get('http://localhost:3000/workorders').pipe(
       catchError((error) => {
         // Handle the error within the service
         console.error('Failed to fetch data:', error);

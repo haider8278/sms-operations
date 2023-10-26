@@ -99,7 +99,8 @@ export class LoginComponent {
       this.data = data;
       if (this.data.length > 0) {
         localStorage.setItem("isLoggedin", "true");
-        this.router.navigate(['dashboard/work-orders']);
+        //this.router.navigate(['dashboard/work-orders']);
+        window.location.href = '/dashboard/work-orders';
       } else {
 
         this.loginError =  {

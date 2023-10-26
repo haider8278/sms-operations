@@ -202,3 +202,7 @@ input.is-invalid{
 .mdc-button > span{
   margin: 0 !important;
 }
+a.mdc-button {
+  text-decoration: none;
+  color: #fff !important;
+}
