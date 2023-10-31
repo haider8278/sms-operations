@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
+
 :root {
   --color-white: #ffffff;
   --color-main-background: #35404b;
@@ -45,8 +46,14 @@ h2{
   grid-template-rows: auto;
   gap: 15px;
 }
+.grid.g-6 {
+  grid-template-columns: repeat(6, minmax(200px, 1fr));
+}
 .grid.g-4{
   grid-template-columns: repeat(4, minmax(216px, 1fr));
+}
+.grid.g-2 {
+  grid-template-columns: repeat(2, minmax(335px, 1fr));
 }
 
 .grid-item label{
@@ -198,6 +205,7 @@ input.is-invalid{
 }
 .mat-mdc-outlined-button:not(:disabled){
   border-color: var(--color-primary-green) !important;
+  color: var(--color-primary-green) !important;
 }
 .mdc-button > span{
   margin: 0 !important;
@@ -205,4 +213,44 @@ input.is-invalid{
 a.mdc-button {
   text-decoration: none;
   color: #fff !important;
+}
+.justify-left .mat-grid-tile-content {
+  justify-content: left;
+}
+.justify-end .mat-grid-tile-content {
+  justify-content: end;
+}
+.align-top .mat-grid-tile-content{
+  align-items: start;
+}
+.m2{
+  margin:0 17px;
+}
+.mr1{
+  margin-right: 12px;
+}
+.mat-mdc-outlined-button.mat-warn{
+  border-color: var(--color-red) !important;
+  color: var(--color-red) !important;
+}
+
+
+.mat-mdc-tab .mdc-tab__content {
+  font-size: 22px;
+  font-weight: bold;
+}
+.mat-mdc-tab.mdc-tab--active .mdc-tab__text-label{
+  color: var(--color-white) !important;
+}
+
+.imag-box {
+  width: 333px;
+  margin: 0 auto;
+  height: 390px;
+  position: relative;
+  text-align: center;
+}
+
+.image-box img {
+  object-fit: contain;
 }

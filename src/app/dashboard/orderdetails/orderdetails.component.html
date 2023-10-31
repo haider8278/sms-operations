@@ -1,1 +1,151 @@
-<p>orderdetails works!</p>
+<mat-grid-list cols="12" rowHeight="80px" ngClass="m2">
+  <mat-grid-tile colspan="6" rowspan="1" ngClass="justify-left">
+    <a [routerLink]="['/dashboard/work-orders']" mat-stroked-button><mat-icon color="primary">arrow_back</mat-icon> WORK ORDER SUMMARY</a>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="6" rowspan="1" ngClass="justify-end">
+    <a [routerLink]="['/dashboard/work-orders']" mat-stroked-button color="warn" class="mr1">
+      <mat-icon color="warn">flag</mat-icon> FLAG
+    </a>
+    <a [routerLink]="['/dashboard/work-orders']" mat-stroked-button color="primary" class="mr1">
+      <mat-icon color="primary">note_add</mat-icon> ADD NOTE
+    </a>
+    <a [routerLink]="['/dashboard/work-orders']" mat-raised-button color="primary">
+      <mat-icon>done_outline</mat-icon> WORK DONE
+    </a>
+  </mat-grid-tile>
+</mat-grid-list>
+<div class="container" style="margin-top: 0;">
+  <h2>Work Order Details &nbsp;&nbsp;
+    <span class="text-green"><small>Boy Scouts of America</small></span>
+  </h2>
+  <mat-grid-list cols="12" [ngClass]="['summary-item']" rowHeight="100px" >
+    <mat-grid-tile colspan="6" rowspan="1">
+      <div class="grid g-2">
+        <div class="grid-item">
+          <span>WORK ORDER #: <span class="text-green">00856954</span></span>
+        </div>
+        <div class="grid-item">
+          <span>CUSTOMER PO #: <span class="text-green">00523147</span></span>
+        </div>
+        <div class="grid-item">
+          <span>DUE DATE: <span class="text-green">4/23/2023</span></span>
+        </div>
+        <div class="grid-item">
+          <span>EST. SHIPPING DATE: <span class="text-green">5/1/2023</span></span>
+        </div>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="6" rowspan="1" >
+      <div class="grid" style="grid-template-columns: repeat(1, 1fr);width: 90%;">
+      <label style="color:grey;font-size:18px;">Pipline Stage: <span class="text-green" [style]="{'font-size':'20px','font-weight':'bold','vertical-align':'middle'}">Pipeline Lable > Stage Label</span></label>
+      <div class="stepper">
+        <div class="step active">start</div>
+        <div class="step active">1</div>
+        <div class="step active">2</div>
+        <div class="step active">3</div>
+        <div class="step active" style="border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;">4</div>
+        <div class="step">5</div>
+      </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+  <mat-grid-list cols="6" rowHeight="60px" ngClass="justify-left" >
+    <mat-grid-tile colspan="6" rowspan="1">
+      <div class="grid g-6">
+        <div class="grid-item">
+          <span>INVENTORY STATUS</span>
+          <label class="text-green">Partially</label>
+        </div>
+        <div class="grid-item">
+          <span>VENDOR</span>
+          <label class="text-green">Sanmar</label>
+        </div>
+        <div class="grid-item">
+          <span>BRAND</span>
+          <label class="text-green">Bella Canvas</label>
+        </div>
+        <div class="grid-item">
+          <span>ADD ONS</span>
+          <label class="text-green">None</label>
+        </div>
+        <div class="grid-item">
+          <span>EXTRA SERVICES</span>
+          <label class="text-green">Ticket, Polybag, Hangtag</label>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<mat-grid-list cols="12" rowHeight="550px" ngClass="justify-left align-top">
+  <mat-grid-tile colspan="4" rowspan="1">
+    <div class="container">
+      <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let i of [].constructor(3); let index = index">
+          <ng-template carouselSlide>
+            <div class="imag-box">
+              <img src="../../../assets/img/doc.jpg">
+            </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="8" rowspan="1">
+    <div class="container">
+      <mat-tab-group>
+        <mat-tab label="WORK ORDER NOTES">
+          <table mat-table [dataSource]="dataSource_wo" class="mat-elevation-z8">
+            <ng-container matColumnDef="date">
+              <th mat-header-cell *matHeaderCellDef> Date </th>
+              <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+            </ng-container>
+            <ng-container matColumnDef="user">
+              <th mat-header-cell *matHeaderCellDef> User </th>
+              <td mat-cell *matCellDef="let element"> {{element.user}} </td>
+            </ng-container>
+            <ng-container matColumnDef="note">
+              <th mat-header-cell *matHeaderCellDef> Note </th>
+              <td mat-cell *matCellDef="let element"> {{element.note}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns_wo"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns_wo;"></tr>
+          </table>
+        </mat-tab>
+        <mat-tab label="DECORATIONS TABLE">
+          <table mat-table [dataSource]="decoration_table_src" class="mat-elevation-z8">
+            <ng-container matColumnDef="sku">
+              <th mat-header-cell *matHeaderCellDef> Design SKU </th>
+              <td mat-cell *matCellDef="let element"> {{element.sku}} </td>
+            </ng-container>
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> Design ID </th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+            <ng-container matColumnDef="type">
+              <th mat-header-cell *matHeaderCellDef> DEC Type </th>
+              <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+            </ng-container>
+            <ng-container matColumnDef="loc">
+              <th mat-header-cell *matHeaderCellDef> DEC LOC </th>
+              <td mat-cell *matCellDef="let element"> {{element.loc}} </td>
+            </ng-container>
+            <ng-container matColumnDef="number_of_artifact">
+              <th mat-header-cell *matHeaderCellDef> # of Artifact </th>
+              <td mat-cell *matCellDef="let element"> {{element.number_of_artifact}} </td>
+            </ng-container>
+            <ng-container matColumnDef="colors">
+              <th mat-header-cell *matHeaderCellDef> Billable Colors </th>
+              <td mat-cell *matCellDef="let element"> {{element.colors}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns_dt"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns_dt;"></tr>
+          </table>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

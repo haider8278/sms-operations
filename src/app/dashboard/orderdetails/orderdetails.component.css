@@ -1,0 +1,79 @@
+.text-green{
+  color: var(--color-primary-green);
+  opacity: 1;
+}
+small {
+  text-transform: none;
+}
+.grid-item span{
+  font-size: 18px;
+  font-weight: 600;
+}
+.stepper{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  gap: 0px;
+  background-color: #353C46;
+  border-radius: 15px;
+  padding: 4px;
+}
+.stepper .step:first-child{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  text-align: left;
+}
+.stepper .step {
+  text-align: center;
+}
+.stepper .active:last-child{
+  border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.stepper .step:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.stepper .step:last-child {
+  text-align: right;
+}
+.stepper .step.active{
+  background-color: var(--color-primary-green);
+  color: #fff;
+}
+.container{
+  width: calc(100% - 65px);
+}
+
+.container2 {
+  background: #2A323C;
+  padding: 20px;
+  margin: 17px;
+  border-radius: 2rem;
+  width: 100%;
+  height: 539px;
+}
+.mat-mdc-table {
+  background: transparent;
+}
+.mat-mdc-tab-group,
+.mat-mdc-tab-nav-bar {
+  --mdc-tab-indicator-active-indicator-color: var(--color-white);
+  --mat-tab-header-disabled-ripple-color: rgba(255, 255, 255, 0.5);
+  --mat-tab-header-pagination-icon-color: #fff;
+  --mat-tab-header-inactive-label-text-color: rgba(255, 255, 255, 0.6);
+  --mat-tab-header-active-label-text-color: var(--color-white);
+  --mat-tab-header-active-ripple-color: var(--color-white);
+  --mat-tab-header-inactive-ripple-color: var(--color-white);
+  --mat-tab-header-inactive-focus-label-text-color: rgba(255, 255, 255, 0.6);
+  --mat-tab-header-inactive-hover-label-text-color: rgba(255, 255, 255, 0.6);
+  --mat-tab-header-active-focus-label-text-color: var(--color-white);
+  --mat-tab-header-active-hover-label-text-color: var(--color-white);
+  --mat-tab-header-active-focus-indicator-color: var(--color-white);
+  --mat-tab-header-active-hover-indicator-color: var(--color-white);
+}
+.mat-column-select {
+  overflow: initial;
+}
+
+
